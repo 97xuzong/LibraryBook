@@ -52,7 +52,7 @@ class BorrowReturnViewSet(viewsets.ViewSet):
         BorrowRecord.objects.create(
             user=request.user,
             book=book,
-            due_date=timezone.now() + timezone.timedelta(days=8)
+            due_date=timezone.now() + timezone.timedelta(days=30)
         )
         return Response({"status": "借书成功"}, status=status.HTTP_200_OK)
 
